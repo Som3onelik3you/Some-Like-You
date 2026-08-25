@@ -1098,6 +1098,10 @@ button{
 
             <br><br>
 
+            También sé que lo nuestro ha sido muy complicado, pero el amor no es perfecto, nosotros tampoco lo somos, pero te aseguro que encontraremos el camino.
+
+            <br><br>
+
             Porque yo no quiero algo perfecto...
 
             <br>
@@ -1234,10 +1238,10 @@ button{
 
 
         <button
-            id="yesButton2"
+            id="noButton"
             class="mainButton">
 
-            Claro que sí 🥹
+            No 💔
 
         </button>
 
@@ -1248,7 +1252,7 @@ button{
 
 
 <!-- ======================================
-     FINAL
+     FINAL - SÍ
 ======================================= -->
 
 <section
@@ -1284,6 +1288,42 @@ button{
 
             <strong>
                 Te amo. ❤️
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     FINAL - NO
+======================================= -->
+
+<section
+    id="noFinalScreen"
+    class="screen hidden">
+
+    <div class="card">
+
+        <div class="bigHeart">
+            🩹
+        </div>
+
+        <h2>
+            Entiendo...
+        </h2>
+
+        <p>
+
+            DE IGUAL MANERA SIEMPRE ESTARÉ PARA TI Y NO SERÁ UN HASTA LUEGO, PERO ESTE FUE MI ÚLTIMO ACTO DE AMOR POR EL AMOR DE MI VIDA.
+
+            <br><br>
+
+            <strong>
+                Gracias por todo. ❤️
             </strong>
 
         </p>
@@ -1714,7 +1754,7 @@ document
 
 
 /* =========================================
-   BOTONES SÍ
+   BOTÓN SÍ
 ========================================= */
 
 document
@@ -1728,13 +1768,15 @@ document
 });
 
 
+/* =========================================
+   BOTÓN NO
+========================================= */
+
 document
-.getElementById("yesButton2")
+.getElementById("noButton")
 .addEventListener("click", function(){
 
-    showScreen("finalScreen");
-
-    createHearts(80);
+    showScreen("noFinalScreen");
 
 });
 
