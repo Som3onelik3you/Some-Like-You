@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para ti ❤️</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+    color:white;
+    background:
+        radial-gradient(circle at center,
+        #751d58 0%,
+        #35112f 30%,
+        #130817 65%,
+        #050208 100%);
+}
+
+/* =========================
+   FONDO
+========================= */
+
+#background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+}
+
+.glow{
+    position:absolute;
+    width:700px;
+    height:700px;
+    left:50%;
+    top:45%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,100,180,.35),
+            rgba(140,60,255,.12),
+            transparent 70%
+        );
+
+    filter:blur(40px);
+
+    animation:glow 5s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        transform:translate(-50%,-50%) scale(.8);
+    }
+
+    to{
+        transform:translate(-50%,-50%) scale(1.2);
+    }
+
+}
+
+.star{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 10px white;
+
+    animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.15;
+        transform:scale(.5);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container{
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.screen{
+
+    width:min(700px,100%);
+
+    text-align:center;
+
+    animation:appear .8s ease;
+
+}
+
+.hidden{
+    display:none !important;
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+.kicker{
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#ffc9e1;
+
+    margin-bottom:20px;
+
+}
+
+h1{
+
+    font-size:
+        clamp(38px,9vw,65px);
+
+    line-height:1.05;
+
+    text-shadow:
+        0 8px 35px
+        rgba(255,100,180,.4);
+
+}
+
+h2{
+
+    font-size:
+        clamp(32px,8vw,55px);
+
+    line-height:1.1;
+
+}
+
+p{
+
+    color:#ead0df;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-top:20px;
+
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+.mainButton{
+
+    margin-top:30px;
+
+    padding:
+        16px 35px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9ccc,
+            #e94c91
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(233,76,145,.4);
+
+    transition:.2s;
+
+}
+
+.mainButton:active{
+
+    transform:scale(.92);
+
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.card{
+
+    padding:
+        clamp(25px,6vw,50px);
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.4);
+
+}
+
+
+/* =========================
+   CORAZÓN
+========================= */
+
+.heartArea{
+
+    position:relative;
+
+    width:min(90vw,500px);
+
+    height:min(60vh,480px);
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.heartGlow{
+
+    position:absolute;
+
+    width:80%;
+
+    height:80%;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,100,180,.6),
+            transparent 70%
+        );
+
+    filter:blur(35px);
+
+    animation:
+        heartbeatGlow 2.5s infinite;
+
+}
+
+@keyframes heartbeatGlow{
+
+    50%{
+        transform:scale(1.15);
+    }
+
+}
+
+.heart{
+
+    position:relative;
+
+    width:min(82vw,420px);
+
+    height:min(82vw,420px);
+
+    cursor:pointer;
+
+    animation:
+        floatingHeart 3s infinite ease-in-out;
+
+    filter:
+        drop-shadow(
+            0 0 15px #ff65ad
+        )
+        drop-shadow(
+            0 25px 40px
+            rgba(0,0,0,.5)
+        );
+
+}
+
+@keyframes floatingHeart{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+
+/* =========================
+   PIXELES DEL CORAZÓN
+========================= */
+
+.pixel{
+
+    position:absolute;
+
+    width:10%;
+
+    height:10%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd8e9,
+            #ff9dc7 30%,
+            #ff65a6 65%,
+            #c82f6c
+        );
+
+    box-shadow:
+        inset 4px 4px 0
+        rgba(255,255,255,.3),
+
+        inset -5px -5px 0
+        rgba(80,0,40,.25);
+
+}
+
+
+/* forma */
+
+.p1{left:10%;top:10%}
+.p2{left:20%;top:10%}
+.p3{left:30%;top:10%}
+.p4{left:60%;top:10%}
+.p5{left:70%;top:10%}
+.p6{left:80%;top:10%}
+
+.p7{left:0;top:20%}
+.p8{left:10%;top:20%}
+.p9{left:20%;top:20%}
+.p10{left:30%;top:20%}
+.p11{left:40%;top:20%}
+.p12{left:50%;top:20%}
+.p13{left:60%;top:20%}
+.p14{left:70%;top:20%}
+.p15{left:80%;top:20%}
+.p16{left:90%;top:20%}
+
+.p17{left:0;top:30%}
+.p18{left:10%;top:30%}
+.p19{left:20%;top:30%}
+.p20{left:30%;top:30%}
+.p21{left:40%;top:30%}
+.p22{left:50%;top:30%}
+.p23{left:60%;top:30%}
+.p24{left:70%;top:30%}
+.p25{left:80%;top:30%}
+.p26{left:90%;top:30%}
+
+.p27{left:10%;top:40%}
+.p28{left:20%;top:40%}
+.p29{left:30%;top:40%}
+.p30{left:40%;top:40%}
+.p31{left:50%;top:40%}
+.p32{left:60%;top:40%}
+.p33{left:70%;top:40%}
+.p34{left:80%;top:40%}
+
+.p35{left:20%;top:50%}
+.p36{left:30%;top:50%}
+.p37{left:40%;top:50%}
+.p38{left:50%;top:50%}
+.p39{left:60%;top:50%}
+.p40{left:70%;top:50%}
+
+.p41{left:30%;top:60%}
+.p42{left:40%;top:60%}
+.p43{left:50%;top:60%}
+.p44{left:60%;top:60%}
+
+.p45{left:40%;top:70%}
+.p46{left:50%;top:70%}
+
+.p47{left:50%;top:80%}
+
+
+/* =========================
+   GOTAS
+========================= */
+
+.drop{
+
+    position:absolute;
+
+    width:18px;
+
+    background:
+        linear-gradient(
+            #ff9bc6,
+            #df4485
+        );
+
+    border-radius:
+        0 0 15px 15px;
+
+    animation:
+        drip 2s infinite;
+
+}
+
+.drop:after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-9px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:15px;
+
+    height:15px;
+
+    background:#df4485;
+
+    border-radius:50%;
+
+}
+
+.d1{
+    left:30%;
+    top:58%;
+    height:55px;
+}
+
+.d2{
+    left:50%;
+    top:68%;
+    height:80px;
+    animation-delay:.5s;
+}
+
+.d3{
+    left:68%;
+    top:48%;
+    height:45px;
+    animation-delay:1s;
+}
+
+@keyframes drip{
+
+    0%,100%{
+        transform:scaleY(.4);
+        opacity:.3;
+    }
+
+    50%{
+        transform:scaleY(1);
+        opacity:1;
+    }
+
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.message{
+
+    min-height:90px;
+
+    font-size:
+        clamp(20px,5vw,30px);
+
+    line-height:1.45;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 4px 20px
+        rgba(255,100,180,.4);
+
+}
+
+.instruction{
+
+    color:#dcbaca;
+
+    margin-top:10px;
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   ROMPER
+========================= */
+
+.breaking{
+
+    animation:
+        breakHeart 1s forwards !important;
+
+}
+
+@keyframes breakHeart{
+
+    0%{
+        transform:scale(1);
+    }
+
+    25%{
+        transform:
+            scale(1.1)
+            rotate(-3deg);
+    }
+
+    50%{
+        transform:
+            scale(1.15)
+            skewX(5deg);
+    }
+
+    75%{
+        transform:
+            scale(.8)
+            rotate(10deg);
+    }
+
+    100%{
+        transform:
+            scale(.05)
+            rotate(40deg);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+.particle{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    background:#ff82b8;
+
+    box-shadow:
+        0 0 12px #ff65aa;
+
+    pointer-events:none;
+
+    z-index:100;
+
+    animation:
+        explode .9s forwards;
+
+}
+
+@keyframes explode{
+
+    to{
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            rotate(600deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================
+   FECHA
+========================= */
+
+.dateInput{
+
+    display:block;
+
+    width:min(280px,100%);
+
+    margin:
+        20px auto;
+
+    padding:16px;
+
+    border-radius:15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    background:
+        rgba(0,0,0,.25);
+
+    color:white;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:20px;
+
+}
+
+.dateInput:focus{
+
+    border-color:#ff82b8;
+
+    box-shadow:
+        0 0 20px
+        rgba(255,100,180,.25);
+
+}
+
+.error{
+
+    min-height:25px;
+
+    color:#ff9dc6;
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.bigHeart{
+
+    font-size:90px;
+
+    animation:
+        finalHeartbeat 1.2s infinite;
+
+}
+
+@keyframes finalHeartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    20%{
+        transform:scale(1.2);
+    }
+
+    40%{
+        transform:scale(1);
+    }
+
+    60%{
+        transform:scale(1.1);
+    }
+
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div id="background">
+
+    <div class="glow"></div>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- ======================================
+     INTRO
+======================================= -->
+
+<section
+    id="intro"
+    class="screen">
+
+    <div class="kicker">
+        Para alguien muy especial
+    </div>
+
+    <h1>
+        Si llegaste hasta aquí,<br>
+        es porque me amas. ❤️
+    </h1>
+
+    <p>
+        Tengo algo preparado para ti.
+        <br>
+        Pero tendrás que descubrirlo.
+    </p>
+
+    <button
+        id="startButton"
+        class="mainButton">
+
+        Comenzar 💗
+
+    </button>
+
+</section>
+
+
+
+<!-- ======================================
+     CORAZÓN
+======================================= -->
+
+<section
+    id="heartScreen"
+    class="screen hidden">
+
+    <div class="kicker">
+
+        ROMPE EL CORAZÓN
+
+        <br>
+
+        <span id="counter">
+            1
+        </span>/5
+
+    </div>
+
+
+    <div class="heartArea">
+
+        <div class="heartGlow"></div>
+
+
+        <div
+            id="heart"
+            class="heart"
+            role="button"
+            tabindex="0">
+
+
+            <div class="pixel p1"></div>
+            <div class="pixel p2"></div>
+            <div class="pixel p3"></div>
+            <div class="pixel p4"></div>
+            <div class="pixel p5"></div>
+            <div class="pixel p6"></div>
+
+            <div class="pixel p7"></div>
+            <div class="pixel p8"></div>
+            <div class="pixel p9"></div>
+            <div class="pixel p10"></div>
+            <div class="pixel p11"></div>
+            <div class="pixel p12"></div>
+            <div class="pixel p13"></div>
+            <div class="pixel p14"></div>
+            <div class="pixel p15"></div>
+            <div class="pixel p16"></div>
+
+            <div class="pixel p17"></div>
+            <div class="pixel p18"></div>
+            <div class="pixel p19"></div>
+            <div class="pixel p20"></div>
+            <div class="pixel p21"></div>
+            <div class="pixel p22"></div>
+            <div class="pixel p23"></div>
+            <div class="pixel p24"></div>
+            <div class="pixel p25"></div>
+            <div class="pixel p26"></div>
+
+            <div class="pixel p27"></div>
+            <div class="pixel p28"></div>
+            <div class="pixel p29"></div>
+            <div class="pixel p30"></div>
+            <div class="pixel p31"></div>
+            <div class="pixel p32"></div>
+            <div class="pixel p33"></div>
+            <div class="pixel p34"></div>
+
+            <div class="pixel p35"></div>
+            <div class="pixel p36"></div>
+            <div class="pixel p37"></div>
+            <div class="pixel p38"></div>
+            <div class="pixel p39"></div>
+            <div class="pixel p40"></div>
+
+            <div class="pixel p41"></div>
+            <div class="pixel p42"></div>
+            <div class="pixel p43"></div>
+            <div class="pixel p44"></div>
+
+            <div class="pixel p45"></div>
+            <div class="pixel p46"></div>
+
+            <div class="pixel p47"></div>
+
+
+            <div class="drop d1"></div>
+            <div class="drop d2"></div>
+            <div class="drop d3"></div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="heartMessage"
+        class="message">
+
+        Si llegaste hasta aquí,
+        es porque me amas. ❤️
+
+    </div>
+
+
+    <div
+        id="instruction"
+        class="instruction">
+
+        Toca el corazón.
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     FECHA
+======================================= -->
+
+<section
+    id="dateScreen"
+    class="screen hidden">
+
+    <div class="card">
+
+        <div class="kicker">
+            MENSAJE OCULTO 💌
+        </div>
+
+        <h2>
+            Ahora necesito comprobar algo...
+        </h2>
+
+        <p>
+
+            Ingresa la fecha de nuestra
+            primera relación.
+
+            <br><br>
+
+            El día en que comenzó
+            nuestra historia.
+
+        </p>
+
+
+        <input
+            id="dateInput"
+            class="dateInput"
+            type="text"
+            inputmode="numeric"
+            maxlength="10"
+            placeholder="DD/MM/AAAA">
+
+
+        <div
+            id="dateError"
+            class="error">
+        </div>
+
+
+        <button
+            id="dateButton"
+            class="mainButton">
+
+            Continuar ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     GRACIAS
+======================================= -->
+
+<section
+    id="thanksScreen"
+    class="screen hidden">
+
+    <div class="card">
+
+        <div class="bigHeart">
+            🥹
+        </div>
+
+        <div class="kicker">
+            LO RECORDABAS
+        </div>
+
+        <h2>
+            Gracias... ❤️
+        </h2>
+
+        <p>
+
+            Pensé que lo habías olvidado.
+
+            <br><br>
+
+            Pero si llegaste hasta aquí,
+            significa que todavía recuerdas
+            uno de los días más importantes
+            de nuestra historia.
+
+        </p>
+
+
+        <button
+            id="thanksButton"
+            class="mainButton">
+
+            Continuar 💗
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     MENSAJE DE AMOR
+======================================= -->
+
+<section
+    id="loveScreen"
+    class="screen hidden">
+
+    <div class="card">
+
+        <div class="kicker">
+            ANTES DE LA PREGUNTA
+        </div>
+
+        <h2>
+            A ti... ❤️
+        </h2>
+
+        <p>
+
+            A ti, la persona que más amo
+            en este mundo y con la que quiero
+            compartir una eternidad.
+
+            <br><br>
+
+            Primero quiero que sepas algo:
+            <strong>
+                el amor no es perfecto.
+            </strong>
+
+            No siempre tendremos la razón,
+            no siempre estaremos de acuerdo
+            y habrá momentos difíciles.
+
+            <br><br>
+
+            Pero amar también significa
+            aprender a entendernos,
+            perdonarnos, apoyarnos y elegirnos
+            incluso cuando las cosas no sean fáciles.
+
+            <br><br>
+
+            Porque yo no quiero algo perfecto...
+
+            <br>
+
+            <strong>
+                Quiero algo verdadero.
+            </strong>
+
+            <br><br>
+
+            Y contigo quiero seguir construyendo
+            nuestra historia, vivir todos esos
+            momentos que todavía nos faltan y,
+            si la vida nos lo permite,
+            pasar una eternidad a tu lado. ❤️
+
+        </p>
+
+
+        <button
+            id="loveButton"
+            class="mainButton">
+
+            Continuar...
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     SUSPENSO
+======================================= -->
+
+<section
+    id="pauseScreen"
+    class="screen hidden">
+
+    <div class="card">
+
+        <div class="bigHeart">
+            💗
+        </div>
+
+        <div class="kicker">
+            UN ÚLTIMO PASO
+        </div>
+
+        <h2>
+            Ahora te quiero preguntar algo...
+        </h2>
+
+        <p>
+
+            Algo que puede parecer
+            una simple pregunta,
+
+            <br>
+
+            pero que para mí
+            significa muchísimo.
+
+            <br><br>
+
+            <strong>
+                ¿Estás lista?
+            </strong>
+
+        </p>
+
+
+        <button
+            id="readyButton"
+            class="mainButton">
+
+            Estoy lista ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     PREGUNTA
+======================================= -->
+
+<section
+    id="questionScreen"
+    class="screen hidden">
+
+    <div class="bigHeart">
+        💗
+    </div>
+
+    <div class="kicker">
+        DESPUÉS DE TODO ESTO...
+    </div>
+
+    <h2>
+
+        ¿Quieres<br>
+        ser mi novia?
+
+    </h2>
+
+
+    <p>
+
+        No hay otra pregunta escondida.
+
+        <br>
+
+        Esta es la que realmente
+        quería hacerte. ❤️
+
+    </p>
+
+
+    <div class="buttons">
+
+        <button
+            id="yesButton"
+            class="mainButton">
+
+            Sí, quiero 💗
+
+        </button>
+
+
+        <button
+            id="yesButton2"
+            class="mainButton">
+
+            Claro que sí 🥹
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     FINAL
+======================================= -->
+
+<section
+    id="finalScreen"
+    class="screen hidden">
+
+    <div class="card">
+
+        <div class="bigHeart">
+            💗
+        </div>
+
+        <h2>
+            Entonces...
+        </h2>
+
+        <p>
+
+            Tenemos una nueva historia
+            que seguir escribiendo.
+
+            <br><br>
+
+            Gracias por elegirme.
+
+            <br><br>
+
+            Ahora solo quiero seguir creando
+            contigo recuerdos que algún día
+            podamos mirar atrás y sonreír.
+
+            <br><br>
+
+            <strong>
+                Te amo. ❤️
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+
+<script>
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+let heartClicks = 0;
+
+let heartLocked = false;
+
+
+/* =========================================
+   CAMBIAR PANTALLA
+========================================= */
+
+function showScreen(id){
+
+    const screens =
+        document.querySelectorAll(".screen");
+
+
+    screens.forEach(function(screen){
+
+        screen.classList.add("hidden");
+
+    });
+
+
+    const selected =
+        document.getElementById(id);
+
+
+    selected.classList.remove("hidden");
+
+}
+
+
+/* =========================================
+   BOTÓN COMENZAR
+========================================= */
+
+document
+.getElementById("startButton")
+.addEventListener("click", function(){
+
+    showScreen("heartScreen");
+
+});
+
+
+/* =========================================
+   CORAZÓN
+========================================= */
+
+document
+.getElementById("heart")
+.addEventListener("click", breakHeart);
+
+
+document
+.getElementById("heart")
+.addEventListener("keydown", function(event){
+
+    if(
+        event.key === "Enter" ||
+        event.key === " "
+    ){
+
+        event.preventDefault();
+
+        breakHeart();
+
+    }
+
+});
+
+
+function breakHeart(){
+
+    if(heartLocked)
+        return;
+
+
+    if(heartClicks >= 5)
+        return;
+
+
+    heartLocked = true;
+
+
+    const heart =
+        document.getElementById("heart");
+
+
+    createExplosion();
+
+
+    heart.classList.add("breaking");
+
+
+    setTimeout(function(){
+
+        heartClicks++;
+
+
+        if(heartClicks < 5){
+
+            document
+            .getElementById("counter")
+            .textContent =
+                heartClicks + 1;
+
+
+            const messages = [
+
+                "Si llegaste hasta aquí, es porque me amas. ❤️",
+
+                "Este corazón guarda algo especial... 💗",
+
+                "Cada pedacito que se rompe guarda una parte de lo que siento por ti. 💕",
+
+                "Ya casi llegas al mensaje que está escondido... ❤️",
+
+                "Lo encontraste. Ahora falta una última prueba. 💌"
+
+            ];
+
+
+            document
+            .getElementById("heartMessage")
+            .textContent =
+                messages[heartClicks];
+
+
+            document
+            .getElementById("instruction")
+            .textContent =
+                heartClicks === 4
+                ? "Una última vez... ❤️"
+                : "Toca el corazón otra vez.";
+
+
+            heart.classList.remove(
+                "breaking"
+            );
+
+
+            heart.style.opacity = "1";
+
+
+            heartLocked = false;
+
+        }
+
+
+        else{
+
+            setTimeout(function(){
+
+                showScreen("dateScreen");
+
+                heartLocked = false;
+
+            },1000);
+
+        }
+
+    },1000);
+
+}
+
+
+/* =========================================
+   EXPLOSIÓN
+========================================= */
+
+function createExplosion(){
+
+    const heart =
+        document.getElementById("heart");
+
+
+    const rect =
+        heart.getBoundingClientRect();
+
+
+    const centerX =
+        rect.left +
+        rect.width / 2;
+
+
+    const centerY =
+        rect.top +
+        rect.height / 2;
+
+
+    for(
+        let i = 0;
+        i < 70;
+        i++
+    ){
+
+        const particle =
+            document.createElement("div");
+
+
+        particle.className =
+            "particle";
+
+
+        particle.style.left =
+            centerX + "px";
+
+
+        particle.style.top =
+            centerY + "px";
+
+
+        const angle =
+            Math.random() *
+            Math.PI * 2;
+
+
+        const distance =
+            100 +
+            Math.random() * 300;
+
+
+        particle.style.setProperty(
+            "--x",
+            Math.cos(angle) *
+            distance +
+            "px"
+        );
+
+
+        particle.style.setProperty(
+            "--y",
+            Math.sin(angle) *
+            distance +
+            "px"
+        );
+
+
+        document.body.appendChild(
+            particle
+        );
+
+
+        setTimeout(function(){
+
+            particle.remove();
+
+        },1000);
+
+    }
+
+}
+
+
+/* =========================================
+   FECHA
+========================================= */
+
+const dateInput =
+    document.getElementById(
+        "dateInput"
+    );
+
+
+dateInput.addEventListener(
+    "input",
+    function(){
+
+        let value =
+            this.value.replace(
+                /\D/g,
+                ""
+            );
+
+
+        if(value.length > 8){
+
+            value =
+                value.substring(0,8);
+
+        }
+
+
+        if(value.length >= 5){
+
+            value =
+                value.substring(0,2)
+                + "/"
+                + value.substring(2,4)
+                + "/"
+                + value.substring(4);
+
+        }
+
+        else if(value.length >= 3){
+
+            value =
+                value.substring(0,2)
+                + "/"
+                + value.substring(2);
+
+        }
+
+
+        this.value = value;
+
+    }
+);
+
+
+/* =========================================
+   COMPROBAR FECHA
+========================================= */
+
+document
+.getElementById("dateButton")
+.addEventListener("click", checkDate);
+
+
+dateInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            checkDate();
+
+        }
+
+    }
+);
+
+
+function checkDate(){
+
+    const value =
+        dateInput.value.trim();
+
+
+    const error =
+        document.getElementById(
+            "dateError"
+        );
+
+
+    if(value === "09/03/2023"){
+
+        error.textContent = "";
+
+
+        showScreen(
+            "thanksScreen"
+        );
+
+
+        createHearts(15);
+
+    }
+
+    else{
+
+        error.textContent =
+            "Esa no es la fecha... intenta recordar. ❤️";
+
+        dateInput.focus();
+
+    }
+
+}
+
+
+/* =========================================
+   BOTÓN GRACIAS
+========================================= */
+
+document
+.getElementById("thanksButton")
+.addEventListener("click", function(){
+
+    showScreen("loveScreen");
+
+});
+
+
+/* =========================================
+   BOTÓN MENSAJE DE AMOR
+========================================= */
+
+document
+.getElementById("loveButton")
+.addEventListener("click", function(){
+
+    showScreen("pauseScreen");
+
+});
+
+
+/* =========================================
+   BOTÓN ESTOY LISTA
+========================================= */
+
+document
+.getElementById("readyButton")
+.addEventListener("click", function(){
+
+    showScreen("questionScreen");
+
+});
+
+
+/* =========================================
+   BOTONES SÍ
+========================================= */
+
+document
+.getElementById("yesButton")
+.addEventListener("click", function(){
+
+    showScreen("finalScreen");
+
+    createHearts(80);
+
+});
+
+
+document
+.getElementById("yesButton2")
+.addEventListener("click", function(){
+
+    showScreen("finalScreen");
+
+    createHearts(80);
+
+});
+
+
+/* =========================================
+   CORAZONES FLOTANTES
+========================================= */
+
+function createHearts(amount){
+
+    for(
+        let i = 0;
+        i < amount;
+        i++
+    ){
+
+        setTimeout(function(){
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.textContent =
+                Math.random() > .3
+                ? "💗"
+                : "💕";
+
+
+            heart.style.position =
+                "fixed";
+
+
+            heart.style.bottom =
+                "-50px";
+
+
+            heart.style.left =
+                Math.random() *
+                100 +
+                "vw";
+
+
+            heart.style.fontSize =
+                18 +
+                Math.random() *
+                35 +
+                "px";
+
+
+            heart.style.zIndex =
+                "200";
+
+
+            heart.style.pointerEvents =
+                "none";
+
+
+            heart.style.animation =
+                "floatingHeart 5s linear forwards";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(function(){
+
+                heart.remove();
+
+            },5000);
+
+        },i * 60);
+
+    }
+
+}
+
+
+/* =========================================
+   ESTRELLAS
+========================================= */
+
+function createStars(){
+
+    const background =
+        document.getElementById(
+            "background"
+        );
+
+
+    for(
+        let i = 0;
+        i < 70;
+        i++
+    ){
+
+        const star =
+            document.createElement("div");
+
+
+        star.className =
+            "star";
+
+
+        star.style.left =
+            Math.random() *
+            100 +
+            "%";
+
+
+        star.style.top =
+            Math.random() *
+            100 +
+            "%";
+
+
+        star.style.animationDelay =
+            Math.random() *
+            3 +
+            "s";
+
+
+        background.appendChild(
+            star
+        );
+
+    }
+
+}
+
+
+createStars();
+
+
+</script>
+
+</body>
+</html>
